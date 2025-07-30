@@ -52,6 +52,12 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// ITJC Theme Colors
+				'warm-cream': 'hsl(var(--warm-cream))',
+				'warm-orange': 'hsl(var(--warm-orange))',
+				'deep-maroon': 'hsl(var(--deep-maroon))',
+				'sage-green': 'hsl(var(--sage-green))',
+				'soft-blue': 'hsl(var(--soft-blue))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
