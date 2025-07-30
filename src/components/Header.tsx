@@ -1,8 +1,19 @@
-import { BookOpen, Bell, User } from "lucide-react";
+import { BookOpen, Bell, User, Globe } from "lucide-react";
 import { Button } from "./ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "./ui/avatar";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
+  const { language, setLanguage, t } = useLanguage();
+  const location = useLocation();
+
+  const toggleLanguage = () => {
+    setLanguage(language === 'th' ? 'en' : 'th');
+  };
+
+  const isActive = (path: string) => location.pathname === path;
+
   return (
     <header className="bg-card border-b border-border px-6 py-4">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -19,22 +30,46 @@ const Header = () => {
 
         {/* Navigation */}
         <nav className="hidden md:flex items-center gap-8">
-          <a href="#" className="text-foreground hover:text-primary transition-colors font-medium">
-            หลักสูตร
-          </a>
-          <a href="#" className="text-foreground hover:text-primary transition-colors font-medium">
-            แบบทดสอบ
-          </a>
-          <a href="#" className="text-foreground hover:text-primary transition-colors font-medium">
-            เส้นทางอาชีพ
-          </a>
-          <a href="#" className="text-foreground hover:text-primary transition-colors font-medium">
-            ที่ปรึกษา
-          </a>
+          <Link 
+            to="/courses" 
+            className={`transition-colors font-medium ${
+              isActive('/courses') ? 'text-primary' : 'text-foreground hover:text-primary'
+            }`}
+          >
+            {t('nav.courses')}
+          </Link>
+          <Link 
+            to="/tests" 
+            className={`transition-colors font-medium ${
+              isActive('/tests') ? 'text-primary' : 'text-foreground hover:text-primary'
+            }`}
+          >
+            {t('nav.tests')}
+          </Link>
+          <Link 
+            to="/career" 
+            className={`transition-colors font-medium ${
+              isActive('/career') ? 'text-primary' : 'text-foreground hover:text-primary'
+            }`}
+          >
+            {t('nav.career')}
+          </Link>
+          <Link 
+            to="/advisors" 
+            className={`transition-colors font-medium ${
+              isActive('/advisors') ? 'text-primary' : 'text-foreground hover:text-primary'
+            }`}
+          >
+            {t('nav.advisors')}
+          </Link>
         </nav>
 
         {/* User Actions */}
         <div className="flex items-center gap-4">
+          <Button variant="ghost" size="icon" onClick={toggleLanguage}>
+            <Globe className="h-5 w-5" />
+          </Button>
+          
           <Button variant="ghost" size="icon" className="relative">
             <Bell className="h-5 w-5" />
             <span className="absolute -top-1 -right-1 h-5 w-5 bg-warm-orange text-white text-xs rounded-full flex items-center justify-center">
