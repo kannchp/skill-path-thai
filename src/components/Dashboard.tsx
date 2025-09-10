@@ -4,12 +4,32 @@ import CareerTracker from "./CareerTracker";
 import { BookOpen, Trophy, Clock, TrendingUp, Users, Target } from "lucide-react";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
+// 1. Import the toolbar
+import { initToolbar } from '@stagewise/toolbar';
 
+// 2. Define your toolbar configuration
+const stagewiseConfig = {
+  plugins: [],
+};
+
+// 3. Initialize the toolbar when your app starts
+// Framework-agnostic approach - call this when your app initializes
+function setupStagewise() {
+  // Only initialize once and only in development mode
+  if (process.env.NODE_ENV === 'development') {
+    initToolbar(stagewiseConfig);
+  }
+}
+
+// Call the setup function when appropriate for your framework
+setupStagewise();
 const Dashboard = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <div className="bg-gradient-to-br from-primary via-deep-maroon to-primary/90 text-primary-foreground">
+      {/* <div className="bg-gradient-to-br from-primary via-deep-maroon to-primary/90 text-primary-foreground"> */}
+      {/* <div className="bg-gradient-to-br from-rose-800 via-rose-800 to-rose-700 text-primary-foreground">  */}
+      <div className="bg-gradient-to-br from-purple-900 via-purple-900 to-purple-700 text-primary-foreground">
         <div className="max-w-7xl mx-auto px-6 py-12">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-6">
@@ -25,7 +45,7 @@ const Dashboard = () => {
               
               <div className="flex gap-4">
                 <Button variant="cta" size="lg" className="gap-2 shadow-xl">
-                  <BookOpen className="h-5 w-5" />
+                  <BookOpen className="h-5 w-5 text-white" />
                   เริ่มเรียนเลย
                 </Button>
                 <Button variant="warm" size="lg" className="gap-2">
@@ -40,11 +60,11 @@ const Dashboard = () => {
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <div className="w-3 h-3 bg-sage-green rounded-full"></div>
-                    <span className="text-sm">Introduction to Programming - เสร็จแล้ว</span>
+                    <span className="text-sm text-white/70">Introduction to Programming - เสร็จแล้ว</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-3 h-3 bg-warm-orange rounded-full animate-pulse"></div>
-                    <span className="text-sm">Computer Mathematics - กำลังเรียน (85%)</span>
+                    <span className="text-sm text-white/70">Computer Mathematics - กำลังเรียน (85%)</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="w-3 h-3 bg-white/30 rounded-full"></div>
@@ -67,7 +87,7 @@ const Dashboard = () => {
             subtitle="จาก 48 หลักสูตร"
             trend="+2 เดือนนี้"
             trendUp={true}
-            icon={<BookOpen className="h-5 w-5 text-primary" />}
+            icon={<BookOpen className="h-5 w-5 text-theme" />}
           />
           <StatsCard
             title="คะแนนเฉลี่ย"

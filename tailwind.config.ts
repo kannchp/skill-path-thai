@@ -25,7 +25,7 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				primary: {
-					DEFAULT: 'hsl(var(--primary))',
+					DEFAULT: '#581c87',
 					foreground: 'hsl(var(--primary-foreground))'
 				},
 				secondary: {
@@ -58,6 +58,7 @@ export default {
 				'deep-maroon': 'hsl(var(--deep-maroon))',
 				'sage-green': 'hsl(var(--sage-green))',
 				'soft-blue': 'hsl(var(--soft-blue))',
+				'theme': '#581c87', // purple-900
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',

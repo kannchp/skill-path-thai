@@ -28,7 +28,7 @@ const Header = () => {
         {/* Logo */}
         <div className="flex items-center gap-3">
           <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <div className="p-2 bg-gradient-to-br from-primary to-deep-maroon rounded-lg">
+            <div className="p-2 bg-gradient-to-br from-theme via-theme to-theme rounded-lg">
               <BookOpen className="h-6 w-6 text-primary-foreground" />
             </div>
             <div>
@@ -118,12 +118,12 @@ const Header = () => {
           <div className="flex items-center gap-3">
             <Avatar className="h-8 w-8">
               <AvatarImage src="/placeholder-avatar.jpg" />
-              <AvatarFallback className="bg-primary text-primary-foreground">
-                นิ
+              <AvatarFallback className="bg-theme text-primary-foreground">
+                จี
               </AvatarFallback>
             </Avatar>
             <div className="hidden md:block">
-              <p className="text-sm font-medium text-foreground">นิรัชฌา คำทอง</p>
+              <p className="text-sm font-medium text-foreground">คิม จีซู</p>
               <p className="text-xs text-muted-foreground">ปี 2 วิทยาการคอมพิวเตอร์</p>
             </div>
           </div>

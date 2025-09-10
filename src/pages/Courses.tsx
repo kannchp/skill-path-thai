@@ -71,7 +71,7 @@ const Courses = () => {
             <Card key={index} className="hover:shadow-lg transition-shadow cursor-pointer">
               <CardHeader>
                 <div className="flex items-start justify-between mb-2">
-                  <BookOpen className="h-8 w-8 text-primary" />
+                  <BookOpen className="h-8 w-8 text-theme" />
                   <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                     course.level === 'Beginner' ? 'bg-sage-green/20 text-sage-green' :
                     course.level === 'Intermediate' ? 'bg-warm-orange/20 text-warm-orange' :

@@ -42,7 +42,7 @@ const getStatusIcon = (status: string) => {
     case "upcoming":
       return <Clock className="h-4 w-4 text-soft-blue" />;
     default:
-      return <BookOpen className="h-4 w-4 text-muted-foreground" />;
+      return <BookOpen className="h-4 w-4 text-theme" />;
   }
 };
 
@@ -68,7 +68,7 @@ const LearningRoadmap = () => {
           <p className="text-muted-foreground">เส้นทางการเรียนตามหลักสูตรมหาวิทยาลัย</p>
         </div>
         <Button variant="cta" className="gap-2">
-          <BookOpen className="h-4 w-4" />
+          <BookOpen className="h-4 w-4 text-white" />
           ดูทั้งหมด
         </Button>
       </div>
